@@ -1,0 +1,73 @@
+.theme-dark {
+	--bg-secondary: #192540;
+	--bg-secondary-alt: #121928;
+
+	--background-primary: #0B0E14;
+	--background-primary-rgb: 11, 14, 20;
+	--text-accent: #6081ff;
+	--interactive-accent: #388BFD;
+	--interactive-accent-rgb: 56, 139, 253;
+	--interactive-accent-hover: #3a75c9;
+}
+
+.theme-light {
+	--bg-secondary: #7f8ad9;
+	--bg-secondary-alt: #979fb5;
+
+	--background-primary: #9faafd;
+	--background-primary-rgb: 159, 170, 253;
+	--text-accent: #4268af;
+	--interactive-accent: #617fd5;
+	--interactive-accent-rgb: 84, 110, 185;
+	--interactive-accent-hover: #546eb9;
+
+	--text-faint: #656a72;
+	--text-muted: #555F68;
+	--text-muted-rgb: 85, 95, 104;
+}
+
+.theme-dark, .theme-light {
+	--background-primary-alt: var(--background-primary);
+	--background-secondary: var(--background-primary);
+	--background-secondary-alt: var(--background-primary);
+	--background-modifier-border: var(--background-primary);
+	--background-modifier-form-field: var(--background-primary);
+	--background-modifier-form-field-highlighted: var(--background-primary);
+	--text-on-accent: var(--text-normal);
+}
+
+.titlebar {
+	background: none;
+	border: none;
+}
+
+.nav-file-title {
+	white-space: unset;
+	width: unset;
+}
+
+.workspace-ribbon { border: none; }
+
+.view-header {
+	border: none !important;
+}
+
+.status-bar  {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	border: none;
+	border-top-left-radius: 10px;
+	padding-left: 0;
+	background: rgba(var(--background-primary-rgb), 0.9);
+}
+
+.is-selected { background: var(--bg-secondary) !important; }
+
+.checkbox-container:not(.is-enabled) {
+	background: var(--bg-secondary-alt);
+}
+
+input[type='range'] {
+	background: var(--bg-secondary);
+}
