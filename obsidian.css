@@ -47,7 +47,7 @@
 
 .workspace-ribbon { border: none; }
 
-.view-header { border: none !important; }
+.workspace-leaf.mod-active .view-header { border-bottom: none; }
 
 .status-bar  {
 	position: absolute;
