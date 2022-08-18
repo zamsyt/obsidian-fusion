@@ -7,6 +7,8 @@
 
 	--interactive-accent-rgb: 56, 139, 253;
 	--interactive-accent-hover: #3a75c9;
+
+	--text-on-accent: var(--background-primary);
 }
 
 .theme-light {
@@ -30,7 +32,6 @@
 	--background-modifier-border: var(--background-primary);
 	--background-modifier-form-field: var(--background-primary);
 	--background-modifier-form-field-highlighted: var(--background-primary);
-	--text-on-accent: var(--text-normal);
 	--interactive-accent: rgb(var(--interactive-accent-rgb));
 	--text-muted: rgb(var(--text-muted-rgb));
 }
@@ -39,6 +40,8 @@
 	background: none;
 	border: none;
 }
+.titlebar-inner { color: var(--text-normal); }
+.titlebar-text { color: transparent; }
 
 .nav-file-title {
 	white-space: unset;
@@ -48,6 +51,11 @@
 .workspace-ribbon { border: none; }
 
 .workspace-leaf.mod-active .view-header { border-bottom: none; }
+@media (hover: hover) {
+	.view-header:not(:hover) :is(.view-header-icon, .view-action) {
+		color: transparent;
+	}
+}
 
 .status-bar  {
 	position: absolute;
@@ -66,3 +74,5 @@
 }
 
 input[type='range'] { background: var(--bg-secondary); }
+
+hr, .markdown-rendered hr { border-color: var(--text-accent); }
