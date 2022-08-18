@@ -52,6 +52,9 @@
 
 .workspace-leaf.mod-active .view-header { border-bottom: none; }
 @media (hover: hover) {
+	.view-header :is(.view-header-icon, .view-action) {
+		transition: color 100ms;
+	}
 	.view-header:not(:hover) :is(.view-header-icon, .view-action) {
 		color: transparent;
 	}
