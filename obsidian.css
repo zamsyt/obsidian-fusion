@@ -43,12 +43,12 @@
 .titlebar-inner { color: var(--text-normal); }
 .titlebar-text { color: transparent; }
 
+.side-dock-settings { margin-bottom: 10px; }
+
 .nav-file-title {
 	white-space: unset;
 	width: unset;
 }
-
-.workspace-ribbon { border: none; }
 
 .workspace-leaf.mod-active .view-header { border-bottom: none; }
 @media (hover: hover) {
@@ -67,7 +67,7 @@
 	background: rgba(var(--background-primary-rgb), 0.9);
 }
 
-.is-selected { background: var(--bg-secondary) !important; }
+.is-selected { --background-secondary: var(--bg-secondary); }
 
 .checkbox-container:not(.is-enabled) {
 	background: var(--bg-secondary-alt);
