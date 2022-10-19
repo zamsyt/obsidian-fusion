@@ -1,0 +1,64 @@
+.theme-dark {
+  --color-base-00: #0b0e14;
+  --color-base-10: #1c2028;
+  --color-base-20: #2d323c;
+  --color-base-25: #363b46;
+  --color-base-30: #3f4450;
+  --color-base-35: #474d5a;
+  --color-base-40: #505664;
+  --color-base-50: #626879;
+  --color-base-60: #737a8d;
+  --color-base-70: #848ca1;
+  --color-base-100: #b9c3de;
+}
+
+.theme-light {
+  --color-base-00: #b9c3de;
+  --color-base-05: #b0b9d3;
+  --color-base-10: #a7b0c9;
+  --color-base-20: #969eb5;
+  --color-base-25: #8d95ab;
+  --color-base-30: #848ca1;
+  --color-base-35: #7c8397;
+  --color-base-40: #737a8d;
+  --color-base-50: #626879;
+  --color-base-60: #505664;
+  --color-base-70: #3f4450;
+  --color-base-100: #0b0e14;
+  --accent-l: 60%;
+}
+
+body {
+  --background-primary-alt: var(--background-primary);
+  --background-secondary: var(--background-primary);
+  --background-modifier-active-hover: var(--background-primary);
+  
+  --titlebar-background: var(--background-primary);
+  --titlebar-background-focused: var(--background-primary);
+  
+  --divider-color: var(--background-primary);
+  --tab-divider-color: var(--background-primary);
+  
+  --icon-color: var(--text-faint);
+
+  --accent-h: 228;
+
+  --hr-color: var(--text-accent);
+}
+
+.titlebar-button:not(:hover) { color: var(--text-faint); }
+
+.workspace-tab-header:not(.is-active, :hover) .workspace-tab-header-inner-title {
+  color: var(--tab-text-color) !important;
+}
+
+.workspace-tab-header:not(:hover) .workspace-tab-header-inner-close-button { opacity: 0 !important; }
+
+/* Unusable: Hover doesn't work on drag area
+/* .workspace-tab-header-container:not(:hover) .workspace-tab-header-new-tab { display: none; }*/
+
+.workspace-tab-header-inner-title { text-align: center; }
+
+.view-header:not(:hover) :is(.view-header-nav-buttons, .view-actions) { opacity: 0; }
+
+hr { border-width: 1px !important; }
