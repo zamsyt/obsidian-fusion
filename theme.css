@@ -54,9 +54,6 @@ body {
 
 .workspace-tab-header:not(:hover) .workspace-tab-header-inner-close-button { opacity: 0 !important; }
 
-/* Unusable: Hover doesn't work on drag area
-/* .workspace-tab-header-container:not(:hover) .workspace-tab-header-new-tab { display: none; }*/
-
 .workspace-tab-header-inner-title { text-align: center; }
 
 .view-header:not(:hover) :is(.view-header-nav-buttons, .view-actions) { opacity: 0; }
