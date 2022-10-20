@@ -52,10 +52,16 @@ body {
   color: var(--tab-text-color) !important;
 }
 
-.workspace-tab-header:not(:hover) .workspace-tab-header-inner-close-button { opacity: 0 !important; }
-
 .workspace-tab-header-inner-title { text-align: center; }
 
-.view-header:not(:hover) :is(.view-header-nav-buttons, .view-actions) { opacity: 0; }
-
 hr { border-width: 1px !important; }
+
+@media (hover: hover) {
+  .workspace-tab-header:not(:hover) .workspace-tab-header-inner-close-button { opacity: 0 !important; }
+
+  .view-header:not(:hover) :is(.view-header-nav-buttons, .view-actions) { opacity: 0; }
+}
+
+@media (hover: none) {
+  .workspace-tab-header:not(.is-active) .workspace-tab-header-inner-close-button { opacity: 0 !important; }
+}
