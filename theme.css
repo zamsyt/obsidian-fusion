@@ -56,6 +56,19 @@ body {
 
 hr { border-width: 1px !important; }
 
+.view-header {
+  background: transparent !important;
+  position: absolute;
+  width: calc(100% - var(--size-4-6));
+}
+
+.view-header .clickable-icon {
+  background-color: var(--background-primary) !important;
+  opacity: .8;
+}
+
+.view-header-title-container { opacity: 0; }
+
 @media (hover: hover) {
   .workspace-tab-header:not(:hover) .workspace-tab-header-inner-close-button { opacity: 0 !important; }
 
