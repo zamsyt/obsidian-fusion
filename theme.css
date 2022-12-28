@@ -1,3 +1,19 @@
+/* @settings
+
+name: Fusion
+id: fusion
+settings:
+  -
+    id: no-note-padding
+    title: Disable note padding
+    description: Removes the bottom padding from notes. (Hides scrollbar in short notes)
+    type: class-toggle
+*/
+
+body.no-note-padding :is(.cm-content, .markdown-preview-sizer) {
+  padding-bottom: 0 !important;
+}
+
 .theme-dark {
   --color-base-00: #0b0e14;
   --color-base-10: #1c2028;
