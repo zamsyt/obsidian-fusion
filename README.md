@@ -2,4 +2,6 @@
 
 Theme for Obsidian which intends to remove unnecessary visual elements.
 
-![](cover.png)
+![](dark.png)
+
+![](light.png)
