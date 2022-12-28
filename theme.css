@@ -99,4 +99,7 @@ body {
 
 @media (hover: none) {
   .workspace-tab-header:not(.is-active) .workspace-tab-header-inner-close-button { opacity: 0; }
+
+  .view-header { pointer-events: none; }
+  .view-header .clickable-icon { pointer-events: auto; }
 }
