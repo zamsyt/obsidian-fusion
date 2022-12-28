@@ -26,6 +26,9 @@ body.no-note-padding :is(.cm-content, .markdown-preview-sizer) {
   --color-base-60: #737a8d;
   --color-base-70: #848ca1;
   --color-base-100: #b9c3de;
+
+  --text-on-accent: black;
+  --background-modifier-form-field: var(--background-primary-alt);
 }
 
 .theme-light {
@@ -42,6 +45,17 @@ body.no-note-padding :is(.cm-content, .markdown-preview-sizer) {
   --color-base-70: #3f4450;
   --color-base-100: #0b0e14;
   --accent-l: 60%;
+
+  --color-yellow-rgb: 190, 146, 0;
+  --color-yellow: rgb(var(--color-yellow-rgb));
+}
+
+button:not(.clickable-icon, .mod-cta), .dropdown {
+  border: 1px solid var(--background-modifier-border);
+}
+
+:root body {
+  --interactive-normal: var(--background-primary);
 }
 
 body {
@@ -60,6 +74,8 @@ body {
   --accent-h: 228;
 
   --hr-color: var(--text-accent);
+
+  --background-modifier-border-hover: var(--color-base-10);
 }
 
 .titlebar-button:not(:hover) { color: var(--text-faint); }
