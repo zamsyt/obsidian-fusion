@@ -23,17 +23,6 @@ settings:
     type: class-toggle
 */
 
-body.fusion-black {
-  --accent-s: 60%;
-  --accent-l: 60%;
-}
-.fusion-black.theme-dark {
-  --color-base-00: #000;
-}
-.fusion-black.theme-light {
-  --color-base-00: #fff;
-}
-
 body.no-note-padding :is(.cm-content, .markdown-preview-sizer) {
   padding-bottom: 0 !important;
 }
@@ -72,6 +61,19 @@ body.no-note-padding :is(.cm-content, .markdown-preview-sizer) {
 
   --color-yellow-rgb: 190, 146, 0;
   --color-yellow: rgb(var(--color-yellow-rgb));
+}
+
+body.fusion-black {
+  --accent-s: 60%;
+  --accent-l: 60%;
+}
+
+.fusion-black.theme-dark {
+  --color-base-00: #000;
+}
+
+.fusion-black.theme-light {
+  --color-base-00: #fff;
 }
 
 button:not(.clickable-icon, .mod-cta), .dropdown {
