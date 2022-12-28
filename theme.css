@@ -4,17 +4,41 @@ name: Fusion
 id: fusion
 settings:
   -
+    id: theme-variant
+    title: Color scheme
+    type: class-select
+    allowEmpty: false
+    default: fusion-default
+    options:
+      -
+        label: Blue (default)
+        value: fusion-default
+      -
+        label: Black & White
+        value: fusion-black
+  -
     id: no-note-padding
     title: Disable note padding
     description: Removes the bottom padding from notes. (Hides scrollbar in short notes)
     type: class-toggle
 */
 
+body.fusion-black {
+  --accent-s: 60%;
+  --accent-l: 60%;
+}
+.fusion-black.theme-dark {
+  --color-base-00: #000;
+}
+.fusion-black.theme-light {
+  --color-base-00: #fff;
+}
+
 body.no-note-padding :is(.cm-content, .markdown-preview-sizer) {
   padding-bottom: 0 !important;
 }
 
-.theme-dark {
+:root .theme-dark {
   --color-base-00: #0b0e14;
   --color-base-10: #1c2028;
   --color-base-20: #2d323c;
@@ -54,7 +78,7 @@ button:not(.clickable-icon, .mod-cta), .dropdown {
   border: 1px solid var(--background-modifier-border);
 }
 
-:root body {
+:root:root body {
   --interactive-normal: var(--background-primary);
 }
 
