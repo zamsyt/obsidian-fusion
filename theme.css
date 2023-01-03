@@ -153,3 +153,9 @@ body {
   .view-header { pointer-events: none; }
   .view-header .clickable-icon { pointer-events: auto; }
 }
+
+.workspace-leaf-resize-handle:hover {
+  transition: background-color 50ms ease-out,
+              border-color 50ms ease-out,
+              opacity 50ms ease-out;
+}
