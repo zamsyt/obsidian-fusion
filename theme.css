@@ -76,7 +76,7 @@ body.fusion-black {
   --color-base-00: #fff;
 }
 
-button:not(.clickable-icon, .mod-cta), .dropdown {
+button:not(.clickable-icon, .mod-cta, .mod-warning), .dropdown {
   border: 1px solid var(--background-modifier-border);
 }
 
