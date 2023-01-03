@@ -127,8 +127,10 @@ body {
   --accent-h: 228;
 
   --hr-color: var(--text-accent);
+}
 
-  --background-modifier-border-hover: var(--color-base-10);
+.checkbox-container {
+  background: var(--color-base-10);
 }
 
 .titlebar-button:not(:hover) { color: var(--text-faint); }
