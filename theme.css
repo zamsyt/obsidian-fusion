@@ -21,10 +21,18 @@ settings:
     title: Disable note padding
     description: Removes the bottom padding from notes. (Hides scrollbar in short notes)
     type: class-toggle
+  -
+    id: hide-setting-dividers
+    title: Hide setting dividers
+    type: class-toggle
 */
 
 body.no-note-padding :is(.cm-content, .markdown-preview-sizer) {
   padding-bottom: 0 !important;
+}
+
+body.hide-setting-dividers .setting-item {
+  border-top: none;
 }
 
 :root .theme-dark {
