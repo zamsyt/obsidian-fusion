@@ -35,7 +35,10 @@ body.hide-setting-dividers .setting-item {
   border-top: none;
 }
 
+.frontmatter-container.is-collapsed {
+  padding: var(--size-4-2) 0; }
 .frontmatter-container .frontmatter-container-header {
+  padding-bottom: 0;
   border-bottom: none;
 }
 
