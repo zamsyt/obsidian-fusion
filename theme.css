@@ -14,7 +14,7 @@ settings:
         label: Blue (default)
         value: fusion-default
       -
-        label: Black & White
+        label: Black/White
         value: fusion-black
   -
     id: no-note-padding
@@ -78,17 +78,11 @@ body.hide-setting-dividers .setting-item {
   --color-yellow: rgb(var(--color-yellow-rgb));
 }
 
-body.fusion-black {
+:root body.fusion-black {
   --accent-s: 60%;
   --accent-l: 60%;
-}
-
-.fusion-black.theme-dark {
-  --color-base-00: #000;
-}
-
-.fusion-black.theme-light {
-  --color-base-00: #fff;
+  --color-base-00: rgb(var(--mono-rgb-0));
+  --color-base-100: rgb(var(--mono-rgb-100));
 }
 
 button:not(.clickable-icon, .mod-cta, .mod-warning), .dropdown {
