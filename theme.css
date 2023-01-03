@@ -4,6 +4,11 @@ name: Fusion
 id: fusion
 settings:
   -
+    id: colors
+    title: Colors
+    type: heading
+    level: 1
+  -
     id: theme-variant
     title: Color scheme
     type: class-select
@@ -21,6 +26,11 @@ settings:
     title: Increase text contrast
     description: Use a brighter text color.
     type: class-toggle
+  -
+    id: hidden-elements
+    title: Hidden elements
+    type: heading
+    level: 1
   -
     id: no-note-padding
     title: Disable note padding
