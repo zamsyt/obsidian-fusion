@@ -35,6 +35,10 @@ body.hide-setting-dividers .setting-item {
   border-top: none;
 }
 
+.frontmatter-container .frontmatter-container-header {
+  border-bottom: none;
+}
+
 :root .theme-dark {
   --color-base-00: #0b0e14;
   --color-base-10: #1c2028;
