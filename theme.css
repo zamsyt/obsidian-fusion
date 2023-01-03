@@ -17,6 +17,11 @@ settings:
         label: Black/White
         value: fusion-black
   -
+    id: high-contrast-text
+    title: Increase text contrast
+    description: Use a brighter text color.
+    type: class-toggle
+  -
     id: no-note-padding
     title: Disable note padding
     description: Removes the bottom padding from notes. (Hides scrollbar in short notes)
@@ -78,11 +83,14 @@ body.hide-setting-dividers .setting-item {
   --color-yellow: rgb(var(--color-yellow-rgb));
 }
 
+:root:root body.high-contrast-text {
+  --color-base-100: rgb(var(--mono-rgb-100));
+}
+
 :root body.fusion-black {
   --accent-s: 60%;
   --accent-l: 60%;
   --color-base-00: rgb(var(--mono-rgb-0));
-  --color-base-100: rgb(var(--mono-rgb-100));
 }
 
 button:not(.clickable-icon, .mod-cta, .mod-warning), .dropdown {
