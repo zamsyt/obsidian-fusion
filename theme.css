@@ -37,6 +37,11 @@ settings:
     description: Removes the bottom padding from notes. (Hides scrollbar in short notes)
     type: class-toggle
   -
+    id: show-view-header-title
+    title: Show view header title
+    description: Show view header title (while hovering).
+    type: class-toggle
+  -
     id: hide-setting-dividers
     title: Hide setting dividers
     type: class-toggle
@@ -156,7 +161,7 @@ body {
   opacity: .8;
 }
 
-.view-header-title-container *,
+.view-header-title-container > *,
 .view-header-title-container::after {
   display: none;
 }
@@ -166,6 +171,10 @@ body {
   .workspace-tab-header-container:not(:hover) + * .view-header:not(:hover) .clickable-icon {
     opacity: 0;
   }
+
+  body.show-view-header-title .view-header-title-container:not(:hover) > *:not(:focus) {
+    opacity: 0 !important;
+  }
 }
 
 @media (hover: none) {
@@ -173,6 +182,20 @@ body {
 
   .view-header { pointer-events: none; }
   .view-header .clickable-icon { pointer-events: auto; }
+}
+
+body.show-view-header-title .view-header-title-container > * {
+  display: block;
+  background: var(--background-primary);
+  opacity: .8;
+  box-shadow: 0 2px 4px #0004;
+  transition: opacity 0.15s ease-in-out;
+}
+body.show-view-header-title .view-header-title-parent {
+  display: flex;
+}
+.view-header-title {
+  padding: var(--size-2-1) var(--size-4-1);
 }
 
 .workspace-leaf-resize-handle:hover {
