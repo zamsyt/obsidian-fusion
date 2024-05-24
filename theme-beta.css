@@ -1,0 +1,424 @@
+/* Fusion v0.4.0-beta */
+.theme-dark {
+  --c0-r: 17; --c0-g: 19; --c0-b: 30;
+  --c6-r: 218; --c6-g: 218; --c6-b: 218;
+
+  --k1: var(--k1-dark, 0.04);
+  --k2: var(--k2-dark, 0.23);
+  --k3: var(--k3-dark, 0.29);
+  --k4: var(--k4-dark, 0.47);
+  --k5: var(--k5-dark, 0.65);
+}
+
+.theme-light {
+  --c0-r: 239; --c0-g: 245; --c0-b: 255;
+  --c6-r: 34; --c6-g: 34; --c6-b: 34;
+
+  --k1: var(--k1-light, 0.04);
+  --k2: var(--k2-light, 0.21);
+  --k3: var(--k3-light, 0.31);
+  --k4: var(--k4-light, 0.54);
+  --k5: var(--k5-light, 0.77);
+}
+
+.theme-dark, .theme-light {
+  --delta-r: calc(var(--c6-r) - var(--c0-r));
+  --delta-g: calc(var(--c6-g) - var(--c0-g));
+  --delta-b: calc(var(--c6-b) - var(--c0-b));
+
+  --fusion-color-0-rgb: var(--c0-r), var(--c0-g), var(--c0-b);
+  --fusion-color-1-rgb:
+    calc(var(--c0-r) + var(--delta-r) * var(--k1)),
+  	calc(var(--c0-g) + var(--delta-g) * var(--k1)),
+  	calc(var(--c0-b) + var(--delta-b) * var(--k1));
+  --fusion-color-2-rgb:
+   	calc(var(--c0-r) + var(--delta-r) * var(--k2)),
+   	calc(var(--c0-g) + var(--delta-g) * var(--k2)),
+   	calc(var(--c0-b) + var(--delta-b) * var(--k2));
+  --fusion-color-3-rgb:
+   	calc(var(--c0-r) + var(--delta-r) * var(--k3)),
+   	calc(var(--c0-g) + var(--delta-g) * var(--k3)),
+   	calc(var(--c0-b) + var(--delta-b) * var(--k3));
+  --fusion-color-4-rgb:
+   	calc(var(--c0-r) + var(--delta-r) * var(--k4)),
+   	calc(var(--c0-g) + var(--delta-g) * var(--k4)),
+   	calc(var(--c0-b) + var(--delta-b) * var(--k4));
+  --fusion-color-5-rgb:
+   	calc(var(--c0-r) + var(--delta-r) * var(--k5)),
+   	calc(var(--c0-g) + var(--delta-g) * var(--k5)),
+   	calc(var(--c0-b) + var(--delta-b) * var(--k5));
+ 	--fusion-color-6-rgb: var(--c6-r), var(--c6-g), var(--c6-b);
+
+  --fusion-color-0: rgb(var(--fusion-color-0-rgb));
+  --fusion-color-1: rgb(var(--fusion-color-1-rgb));
+  --fusion-color-2: rgb(var(--fusion-color-2-rgb));
+  --fusion-color-3: rgb(var(--fusion-color-3-rgb));
+  --fusion-color-4: rgb(var(--fusion-color-4-rgb));
+  --fusion-color-5: rgb(var(--fusion-color-5-rgb));
+  --fusion-color-6: rgb(var(--fusion-color-6-rgb));
+
+  --accent-h: 221;
+  --accent-s: 33%;
+  --accent-l: 59%;
+}
+
+.theme-dark, .theme-light {
+  --color-base-00: var(--fusion-color-0);
+  --color-base-05: var(--fusion-color-0);
+  --color-base-10: var(--fusion-color-1);
+  --color-base-20: var(--fusion-color-1);
+  --color-base-25: var(--fusion-color-1);
+  --color-base-30: var(--fusion-color-2);
+  --color-base-35: var(--fusion-color-2);
+  --color-base-40: var(--fusion-color-2);
+  --color-base-50: var(--fusion-color-2);
+  --color-base-60: var(--fusion-color-3);
+  --color-base-70: var(--fusion-color-4);
+  --color-base-100: var(--fusion-color-6);
+
+  --fusion-hc-bg: rgb(var(--mono-rgb-0));
+  --fusion-hc-fg: rgb(var(--mono-rgb-100));
+  --fusion-bg:               var(--fusion-color-0);
+  --fusion-bg-2:             var(--fusion-color-1);
+  --fusion-bg-element-faint: var(--fusion-color-2);
+  --fusion-bg-element:       var(--fusion-color-3);
+  --fusion-bg-text:          var(--fusion-color-4);
+  --fusion-fg-secondary:     var(--fusion-color-5);
+  --fusion-fg:               var(--fusion-color-6);
+
+  --interactive-normal: var(--fusion-bg);
+  --background-modifier-form-field: var(--fusion-bg);
+}
+
+body {
+  /*--text-normal: var(--fusion-fg);*/
+
+  /* Remove background color variations */
+  --background-secondary: var(--fusion-bg);
+  --titlebar-background-focused: var(--fusion-bg);
+
+  /*--list-marker-color: var(--fusion-bg-element); /*make more visible*/
+  /*--code-normal: var(--fusion-fg-secondary);*/
+
+  --tab-text-color-focused-active: var(--fusion-fg-secondary);
+
+  --code-comment: var(--fusion-bg-text);
+}
+
+/* Hide lines and borders */
+body { --divider-color: transparent; }
+.setting-item, .modal-setting-nav-bar { border-color: transparent; }
+.mod-community-theme .community-item { --background-modifier-border: transparent; }
+
+/* Tabs */
+/* Hide tab close buttons */
+:root:root .workspace-tab-header:not(:hover, :only-child) .workspace-tab-header-inner-close-button { opacity: 0; }
+@media (hover: none) {
+  :root:root .workspace-tab-header.is-active .workspace-tab-header-inner-close-button { opacity: 1; }
+}
+
+/* Make tab dividers consistently visible */
+body { --tab-background-active: transparent; }
+:root:root .workspace-tab-header-inner::after { opacity: 1; }
+.workspace-tab-header:last-child .workspace-tab-header-inner::after { opacity: 0; }
+
+/* Improve text contrast with hover background (when window not focused) */
+.workspace-tab-header:hover { color: var(--fusion-bg-text); }
+
+/* Add hover background to active tab too */
+.workspace-tab-header:hover .workspace-tab-header-inner {
+  background-color: var(--background-modifier-hover);
+}
+
+/* Move new tab button to right */
+.workspace-tab-header-spacer { display: none; }
+.workspace-tab-header-new-tab {
+  margin-left: auto;
+  margin-right: var(--size-4-1);
+}
+
+/* Hide only tab */
+/* WIP */
+.mod-root .workspace-tab-header-container-inner:has(> :only-child) {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  /*overflow: visible;*/
+  --tab-width: auto;
+  /*flex-grow: 1;*/
+  margin-left: auto;
+}
+.mod-root .workspace-tab-header-container-inner:has(> :only-child) + .workspace-tab-header-new-tab {
+  margin-left: initial;
+}
+.workspace .mod-root .workspace-tab-header:only-child {
+  /*padding: 0;*/
+  padding: var(--size-4-2) 0 var(--size-2-3);
+}
+/* Match only tab close button to the other tab header buttons */
+.workspace-tab-header:only-child .workspace-tab-header-inner-close-button {
+  /*padding: var(--size-4-2) 0 var(--size-2-3);*/
+  padding: var(--size-2-2);
+  color: var(--icon-color);
+}
+.workspace-tab-header:only-child .workspace-tab-header-inner-title {
+  display: none;
+}
+.workspace-tab-header:only-child .workspace-tab-header-inner {
+  background: transparent;
+  justify-content: right;
+}
+/*quick alignment fix*/
+.workspace-tab-header-container {
+  border-bottom: none;
+}
+
+/* Make icons less prominent */
+body { --icon-color: var(--fusion-bg-element); }
+.titlebar-button:not(:hover) { color: var(--fusion-bg-element); } /* window controls */
+.clickable-icon[aria-disabled='true'] { color: var(--fusion-bg-element-faint); } /* disabled buttons */
+
+.vertical-tab-nav-item { color: var(--fusion-fg-secondary); } /* Settings navigation */
+
+:is(.mod-left-split, .mod-right-split) .workspace-tab-header:is(.has-active-menu, .is-active, :hover) .workspace-tab-header-inner-icon {
+  color: var(--fusion-bg-text);
+}
+
+
+/* Buttons, Input */
+/* Add border to replace button background color */
+button:not(.clickable-icon, .mod-cta, .mod-warning), .dropdown {
+  border: 1px solid var(--background-modifier-border);
+}
+.search-results-info .dropdown { border: none; }
+
+body { --text-on-accent: var(--fusion-hc-bg); }
+
+
+/* Preview mode Metadata block */
+.frontmatter-container .frontmatter-container-header {
+  border-bottom: none; /* Hide header underline */
+  /* Reduce padding to compensate */
+  padding-bottom: 0; }
+.frontmatter-container.is-collapsed {
+  padding: var(--size-4-2) 0;
+}
+
+/* Search */
+.search-results-info { border-color: transparent; }
+/*.search-result-container { padding-top: 0; } /* Reduce padding to balance for removed border */
+/*.search-result-container {
+  /*padding: ;/*0 var(--size-4-3) var(--size-4-6) var(--size-4-3)*/
+  /*var(--size-4-3) var(--size-4-3) var(--size-4-4)*/
+  /*padding: 0 var(--sidebar-padding) var(--size-4-4); /* Reduce padding to balance for removed borders */
+/*}*/
+
+/* Reduce padding to balance for removed borders */
+body {
+  --file-margins: var(--size-4-6);
+
+  --sidebar-padding: 6px;
+}
+.nav-files-container     { padding: 0 var(--sidebar-padding) var(--size-4-6); } /*0 var(--size-4-3) var(--size-4-6) var(--size-4-3);*/
+.search-result-container { padding: 0 var(--sidebar-padding) var(--size-4-4); } /*var(--size-4-3) var(--size-4-3) var(--size-4-4)*/
+
+.backlink-pane, .outgoing-link-pane,
+.tag-container,
+.outline {
+  /*var(--size-4-3) var(--size-4-3) var(--size-4-8)*/
+  padding: var(--size-4-3) var(--sidebar-padding) var(--size-4-8);
+}
+
+/* Adjust transition to make resize handles easier to grab */
+.workspace-leaf-resize-handle { transition-duration: 300ms; }
+.workspace-leaf-resize-handle:hover { transition-duration: 10ms; }
+/* Increase size of grab area */
+.workspace-leaf-resize-handle { overflow:  visible; }
+body { --divider-grab-radius: 12px; }
+.workspace-leaf-resize-handle::before {
+  content: "";
+  position: absolute;
+  width: calc(100% + var(--divider-grab-radius));
+  height: calc(100% + var(--divider-grab-radius));
+  bottom: 0;
+}
+.workspace-tabs:not(:last-child) { overflow: visible; }
+
+/* Style settings reset button colors */
+.themed-color-wrapper > .theme-light button {
+  background: white;
+  color: black;
+}
+.themed-color-wrapper > .theme-dark button {
+  background: #222;
+  color: white;
+}
+
+body {
+  --tab-header-height: var(--header-height);
+  --view-header-height: 30px;
+}
+
+/* View header */
+.view-header {
+  position: absolute;
+  width: calc(100% - var(--size-4-3)); /* Leave space for scrollbar */
+  height: var(--view-header-height);
+}
+:root:root:root .view-header { background: transparent; }
+/* Shift page back down */
+.markdown-preview-view,
+.view-content > .markdown-source-view.mod-cm6 > .cm-editor > .cm-scroller {
+  padding-top: var(--view-header-height);
+}
+/* TODO
+- button backgrounds
+- titlebar (height/position)
+*/
+/* TODO: clean up, fix jumpiness */
+.mod-root .workspace-tab-header-container:has(.workspace-tab-header-container-inner > :only-child) {
+  height: 0; }
+.workspace-tab-header-container-inner ~ * {
+  z-index: 1;
+  height: var(--header-height); }
+.workspace-tab-header-container:has(.workspace-tab-header-container-inner > :only-child) + * .view-header {
+  margin-top: var(--header-height); }
+.mod-root .workspace-tab-header-container:has(.workspace-tab-header-container-inner > :only-child)
++ * :is(.view-content > * > .markdown-preview-view, .view-content > .markdown-source-view.mod-cm6 > .cm-editor > .cm-scroller) {
+  padding-top: calc(var(--tab-header-height) + var(--view-header-height));
+}
+
+@media (hover: hover) {
+  .view-header-title-container:not(:hover, :focus-within), /* View header title */
+  .workspace-tab-header-container:not(:hover) + * .view-header:not(:hover) .clickable-icon /* Header buttons */
+  { opacity: 0; }
+}
+/* Add background for buttons */
+:root .view-header .clickable-icon {
+  background-color: var(--fusion-color-0);
+  opacity: .98;
+}
+/* Adjust title container size */
+.view-header-title-container {
+  margin: 0 auto;
+  flex-grow: 0;
+  background: var(--fusion-bg);
+  align-self: center;
+  min-height: 30px;
+  transition: opacity 0.15s ease-in-out;
+}
+/* push aside the fade overlay (FIXME: leaves an annoying empty space) */
+.view-header-title::after {
+  content: "";
+  display: inline-block;
+  width: 30px;
+}
+/* TODO: yeets to the side when clicking off. fix.. animation? */
+.mod-root .workspace-tab-header-container-inner:has(> :only-child)::after {
+  z-index: 1;
+  content: "";
+  width: 100%;
+  /*width: calc(100% - var(--ribbon-width));*/
+  /*background: #f001;*/
+  -webkit-app-region: drag;
+  height: var(--header-height);
+}
+
+@media (hover: hover) {
+  .titlebar-button-container,
+  .workspace-tab-header-container > :not(.workspace-tab-header-container-inner),
+  .status-bar {
+    transition: opacity 0.15s ease-in-out;
+  }
+
+  /* FIXME: tab header buttons take up space even when hidden */
+  /*body:not(:has(:is(
+    .titlebar-button-container.mod-right,
+    .workspace-tabs.mod-top-right-space .workspace-tab-header-container
+  ):hover)):not(:has(.is-right-sidedock-open)) :is(
+    .titlebar-button-container.mod-right,
+    .workspace .mod-root .workspace-tabs.mod-top-right-space .workspace-tab-header-container > :not(.workspace-tab-header-container-inner)
+  ),
+  .workspace:not(.is-right-sidedock-open) .mod-root .workspace-tabs:not(.mod-top-right-space) .workspace-tab-header-container:not(:hover) > :not(.workspace-tab-header-container-inner)
+  { opacity: 0; }*/
+  
+  body/*.hide-top-buttons*/:not(:has(:is(
+    .titlebar-button-container.mod-right,
+    .workspace-tabs.mod-top-right-space .workspace-tab-header-container
+  ):hover)):not(:has(.is-right-sidedock-open)) :is(
+    /**/.titlebar-button-container.mod-right,/**/
+    .workspace .mod-root .workspace-tabs.mod-top-right-space .workspace-tab-header-container > :not(.workspace-tab-header-container-inner)
+  )/*,
+  .workspace:not(.is-right-sidedock-open) .mod-root .workspace-tabs:not(.mod-top-right-space) .workspace-tab-header-container:not(:hover) > :not(.workspace-tab-header-container-inner)*/
+  { opacity: 0; }
+
+  /* TODO
+  - Does right sidedock need to reveal tab header buttons?
+  */
+
+
+  /* Hide status bar (when sidedocks closed) */
+
+  body:not(:has(.is-left-sidedock-open, .is-right-sidedock-open)) {
+    /*.status-bar:not(:hover) {
+      opacity: 0;
+    }*/
+  }
+}
+
+/* Ribbon */
+/* TODO: canvas? (margin) */
+:root:root .workspace-ribbon {
+  transition: opacity 0.15s ease-in-out;
+}
+/*.hide-ribbon*/ :not(.is-left-sidedock-open) > .workspace-ribbon:not(:hover) {
+  opacity: 0;
+}
+
+/* @settings
+name: Fusion (beta)
+id: fusion
+settings:
+-
+  id: c0
+  title: "Background color"
+  type: variable-themed-color
+  format: rgb-split
+  default-dark: '#11131E'
+  default-light: '#EFF5FF'
+-
+  id: c6
+  title: "Text color"
+  type: variable-themed-color
+  format: rgb-split
+  default-dark: '#dadada'
+  default-light: '#222'
+-
+  id: intermediate-colors
+  type: heading
+  title: Intermediate colors
+  level: 2
+-
+  id: interpolation-light
+  type: heading
+  title: Light
+  level: 3
+  collapsed: true
+- <<: &slider {type: variable-number-slider, min: 0, max: 1, step: 0.01}
+  <<: {         id: k1-light, title: k1, default: 0.04}
+- {<<: *slider, id: k2-light, title: k2, default: 0.21}
+- {<<: *slider, id: k3-light, title: k3, default: 0.31}
+- {<<: *slider, id: k4-light, title: k4, default: 0.54}
+- {<<: *slider, id: k5-light, title: k5, default: 0.77}
+-
+  id: interpolation-dark
+  type: heading
+  title: Dark
+  level: 3
+  collapsed: true
+- {<<: *slider, id: k1-dark, title: k1, default: 0.04}
+- {<<: *slider, id: k2-dark, title: k2, default: 0.23}
+- {<<: *slider, id: k3-dark, title: k3, default: 0.29}
+- {<<: *slider, id: k4-dark, title: k4, default: 0.47}
+- {<<: *slider, id: k5-dark, title: k5, default: 0.65}
+*/
