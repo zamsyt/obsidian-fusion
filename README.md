@@ -1,7 +1,7 @@
 # Obsidian Fusion
 
 > [!note]
-> (2024-05-24) Check out the rewritten beta version: [wiki/Fusion v0.4 (beta)](https://github.com/zamsyt/obsidian-fusion/wiki/Fusion-v0.4-beta)
+> (2024-05-24) Check out the rewritten beta version: [wiki/Fusion v0.4 beta](https://github.com/zamsyt/obsidian-fusion/wiki/Fusion-v0.4-beta)
 
 Theme for Obsidian which intends to remove unnecessary visual elements.
 
